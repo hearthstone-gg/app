@@ -1,1 +1,31 @@
-Hearthstone.gg App Server
+<h1>Hearthstone.gg App Server</h1>
+<div socket-log>Socket: </div>
+<hr />
+<div api-log>Ping API: </div>
+<button ping-api>Ping API</button>
+<hr />
+<a href="http://localhost:3002/auth/bnet">
+ 	<button>Login / Register With Battle.net</button>
+</a>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://localhost:3003/socket.io/socket.io.js"></script>
+<script>
+	var socket = io.connect('localhost:3003');
+	socket.on('connect', function() {
+		$('div[socket-log]').append('Connected to socket server<br />');
+	});
+	socket.on('disconnect', function() {
+		$('div[socket-log]').append('Disconnected from socket server<br />');
+	});
+
+	function pingAPI() {
+		$.ajax({
+			url: "http://localhost:3000/ping"
+		}).done(function(data) {
+			$('div[api-log]').append(JSON.stringify(data));
+		});
+	}
+	$('button[ping-api]').click(pingAPI);
+	pingAPI();
+</script>
