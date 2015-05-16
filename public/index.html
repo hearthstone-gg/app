@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="http://localhost:3003/socket.io/socket.io.js"></script>
 <script>
-	var socket = io.connect('localhost:3003');
+	var socket = io.connect('local-socket.hearthstone.gg');
 	socket.on('connect', function() {
 		$('div[socket-log]').append('Connected to socket server<br />');
 	});
