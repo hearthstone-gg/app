@@ -4,12 +4,12 @@
 <div api-log>Ping API: </div>
 <button ping-api>Ping API</button>
 <hr />
-<a href="http://localhost:3002/auth/bnet">
+<a href="http://local-auth.hearthstone.gg/auth/bnet">
  	<button>Login / Register With Battle.net</button>
 </a>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="http://localhost:3003/socket.io/socket.io.js"></script>
+<script src="http://local-socket.hearthstone.gg/socket.io/socket.io.js"></script>
 <script>
 	var socket = io.connect('local-socket.hearthstone.gg');
 	socket.on('connect', function() {
@@ -21,7 +21,7 @@
 
 	function pingAPI() {
 		$.ajax({
-			url: "http://localhost:3000/ping"
+			url: "http://local-api.hearthstone.gg/ping"
 		}).done(function(data) {
 			$('div[api-log]').append(JSON.stringify(data));
 		});
