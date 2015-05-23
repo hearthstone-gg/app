@@ -18,6 +18,9 @@
 	socket.on('disconnect', function() {
 		$('div[socket-log]').append('Disconnected from socket server<br />');
 	});
+	socket.on('ping', function() {
+		$('div[socket-log]').append('Ping from socket server<br />');
+	});
 
 	function pingAPI() {
 		$.ajax({
