@@ -1,34 +1,23 @@
-<h1>Hearthstone.gg App Server</h1>
-<div socket-log>Socket: </div>
-<hr />
-<div api-log>Ping API: </div>
-<button ping-api>Ping API</button>
-<hr />
-<a href="http://local-auth.hearthstone.gg/auth/bnet">
- 	<button>Login / Register With Battle.net</button>
-</a>
+<html>
+	<head>
+		<title>Hearthstone.gg App Server</title>
+	</head>
+	<body>
+		<h1>Hearthstone.gg App Server</h1>
+		<div socket-log>Socket: </div>
+		<hr />
+		<div api-log>Ping API: </div>
+		<button ping-api>Ping API</button>
+		<hr />
+		<a login>
+		 	<button>Login / Register With Battle.net</button>
+		</a>
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="http://local-socket.hearthstone.gg/socket.io/socket.io.js"></script>
-<script>
-	var socket = io.connect('local-socket.hearthstone.gg');
-	socket.on('connect', function() {
-		$('div[socket-log]').append('Connected to socket server<br />');
-	});
-	socket.on('disconnect', function() {
-		$('div[socket-log]').append('Disconnected from socket server<br />');
-	});
-	socket.on('ping', function() {
-		$('div[socket-log]').append('Ping from socket server<br />');
-	});
-
-	function pingAPI() {
-		$.ajax({
-			url: "http://local-api.hearthstone.gg/ping"
-		}).done(function(data) {
-			$('div[api-log]').append(JSON.stringify(data));
-		});
-	}
-	$('button[ping-api]').click(pingAPI);
-	pingAPI();
-</script>
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/amplifyjs/1.1.2/amplify.core.js"></script>
+		
+		<script src="/scripts/main.js"></script>
+		<script src="/scripts/socket.js"></script>
+		<script src="/scripts/api.js"></script>
+		<script src="/scripts/auth.js"></script>
+	</body>
