@@ -1,11 +1,18 @@
 # app
 app server for hearthstone.gg
 
-##amplify events thrown
+##amplify events
 
 `` ready ``` Config file has been loaded from the server
-
-##amplify events caught
-
 `` app:user `` The user was successfully logged in
-`` ready ```
+`` socket:connect `` The socket server was connected to
+`` socket:disconnect `` The socket disconected
+`` socket:ping `` The socket pinged
+
+##emits socket events
+`` subscribe `` Sends a request to hoins a socket.io room for the given token
+
+##test events
+```javascript
+	amplify.publish('app:user', { displayName: 'sup', token: '123' });
+```

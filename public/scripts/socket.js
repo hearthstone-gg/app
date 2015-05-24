@@ -1,3 +1,11 @@
+/*
+when the user has been authed, connects to the socket server
+proxies scoket events to amplify events
+notifys the socket server of the user's token for subscribing to updates
+
+publishes
+	socket:connect
+*/
 (function($, amplify, window, undefined){
 	var socket;
 	var user;
@@ -5,7 +13,7 @@
 	function init() {
 		getElements();
 		bindDOM();
-		amplify.subscribe('authed', onAuth);
+		amplify.subscribe('app:user', onAuth);
 		amplify.subscribe('ready', checkCreate);
 	}
 
@@ -33,24 +41,26 @@
 		script.src = '//' + __hsggServices.socket.domain + '/socket.io/socket.io.js';
 		script.onload = function() {
 			socket = io.connect('//' + __hsggServices.socket.domain);
-			bindSocket();
+			proxySocket();
 		};
 		script.async = true;
 		document.getElementsByTagName('head')[0].appendChild(script);
 	}
 
+	var proxyEvents = ['disconnect', 'ping'];
+
 	//bind it the socket stuff
-	function bindSocket() {
+	function proxySocket() {
+		proxyEvents.forEach(function(event){
+			socket.on(event, function(data) {
+				amplify.publish('socket:'+event, data || null);
+			});
+		});
 		socket.on('connect', function() {
-			$('div[socket-log]').append('Connected to socket server<br />');
+			socket.emit('subscribe', user.token);
+			amplify.publish('socket:connect');
 		});
-		socket.emit('authed', user.token);
-		socket.on('disconnect', function() {
-			$('div[socket-log]').append('Disconnected from socket server<br />');
-		});
-		socket.on('ping', function() {
-			$('div[socket-log]').append('Ping from socket server to token room<br />');
-		});
+	
 	}
 
 

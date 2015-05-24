@@ -4,7 +4,7 @@
 	function init() {
 		getElements();
 		amplify.subscribe('ready', updateLink);
-		window.addEventListener("message", receiveMessage, false);
+		amplify.subscribe('app:user', loadUser);
 	}
 
 	function getElements() {
@@ -15,12 +15,9 @@
 		$login.attr('href', '//' + __hsggServices.auth.domain + '/auth/bnet');
 	}
 
-	function receiveMessage(event) {
-		var user = JSON.stringify(event.data.data);
-		if (event.data.type === 'user') {
-			$login.replaceWith('<strong>Logged In</strong><pre>' + user + '</pre>');
-			amplify.publish('authed', user);
-		}
+	function loadUser(user) {
+		var str = JSON.stringify(user);
+		$login.replaceWith('<strong>Logged In</strong><pre>' + str + '</pre>');
 	}
 
 	$(init);
