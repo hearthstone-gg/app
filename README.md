@@ -14,7 +14,7 @@ app server for hearthstone.gg
 `` socket:ping `` The socket pinged
 
 ##emits socket events
-`` subscribe `` Sends a request to hoins a socket.io room for the given token
+`` subscribe `` Sends a request to join a socket.io room for the given token
 
 ##test events
 ```javascript
