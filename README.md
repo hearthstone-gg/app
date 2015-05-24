@@ -4,9 +4,13 @@ app server for hearthstone.gg
 ##amplify events
 
 `` ready `` Config file has been loaded from the server
+
 `` app:user `` The user was successfully logged in
+
 `` socket:connect `` The socket server was connected to
+
 `` socket:disconnect `` The socket disconected
+
 `` socket:ping `` The socket pinged
 
 ##emits socket events
