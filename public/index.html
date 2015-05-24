@@ -1,17 +1,23 @@
 <html>
 	<head>
 		<title>Hearthstone.gg App Server</title>
+		<link href="/style/reset.css" rel="stylesheet" type="text/css"/>
+		<link href="/style/layout.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
 		<h1>Hearthstone.gg App Server</h1>
-		<div socket-log>Socket: </div>
-		<hr />
-		<div api-log>Ping API: </div>
-		<button ping-api>Ping API</button>
-		<hr />
-		<a login>
-		 	<button>Login / Register With Battle.net</button>
-		</a>
+		<div class="content">
+			<div socket-log>Socket: </div>
+			<hr />
+			<div api-log>Ping API: </div>
+			<button ping-api>Ping API</button>
+			<hr />
+			<a login href="#">
+			 	<button>Login with Battle.Net</button>
+			</a>
+			<button logout>Logout</button>
+			<button unlink>Unlink</button>
+		</div>
 
 		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/amplifyjs/1.1.2/amplify.core.js"></script>

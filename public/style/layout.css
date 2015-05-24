@@ -1,0 +1,20 @@
+body {
+	background: #3d3d3d;
+	color: #f3f3f3;
+	padding: 0;
+	margin: 0;
+	font-size: 20px;
+}
+h1 {
+	background: #1e5799;
+	box-sizing: border-box;
+	padding: .5em;
+	margin: 0 0 1em 0;
+}
+.content {
+	padding: 0 .5em;
+}
+
+[logout], [unlink] {
+	display: none;
+}
