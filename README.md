@@ -19,4 +19,12 @@ app server for hearthstone.gg
 ##test events
 ```javascript
 	amplify.publish('app:user', { displayName: 'sup', token: '123' });
+
+	amplify.publish('app:game-start', [{"name":"The Innkeeper","teamId":2,"team":"OPPOSING"},{"name":"Tidwell","teamId":1,"team":"FRIENDLY"}]);
+
+	amplify.publish('app:friendly-hero', {"cardName":"Rexxar","cardId":4,"team":"FRIENDLY","zone":"PLAY (Hero)"});
+
+	amplify.publish('app:opposing-hero', {"cardName":"Valeera Sanguinar","cardId":36,"team":"OPPOSING","zone":"PLAY (Hero)"});
+
+	amplify.publish('app:game-over', [{"name":"The Innkeeper","teamId":2,"team":"OPPOSING","status":"WON"},{"name":"Tidwell","teamId":1,"team":"FRIENDLY","status":"LOST"}]);
 ```

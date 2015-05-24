@@ -13,6 +13,20 @@
 		amplify.subscribe('socket:ping', function() {
 			$('div[socket-log]').append('Ping from socket server to token room<br />');
 		});
+
+		amplify.subscribe('app:friendly-hero', function(data) {
+			$('div[socket-log]').append('friendly-hero ' + JSON.stringify(data) + '<br />');
+		});
+		amplify.subscribe('app:opposing-hero', function(data) {
+			$('div[socket-log]').append('opposing-hero ' + JSON.stringify(data) + '<br />');
+		});
+		amplify.subscribe('app:game-start', function(data) {
+			$('div[socket-log]').append('game-start ' + JSON.stringify(data) + '<br />');
+		});
+		amplify.subscribe('app:game-over', function(data) {
+			$('div[socket-log]').append('game-over ' + JSON.stringify(data) + '<br />');
+		});
+
 	}
 
 	$(init);
