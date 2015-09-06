@@ -1,12 +1,34 @@
 <html>
 	<head>
 		<title>Hearthstone.gg App Server</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link href="/style/reset.css" rel="stylesheet" type="text/css"/>
 		<link href="/style/layout.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
-		<h1>Hearthstone.gg App Server</h1>
+		<h1>
+			Hearthstone.gg App Server
+
+			<i class="fa-sellsy fa pull-right" status-icon></i>
+			<i class="fa-gamepad fa pull-right connected" game-status-icon></i>
+		</h1>
 		<div class="content">
+			<div class="class-icons">
+				<div class="game">
+					<span player-class></span>
+					<span class="vs">VS</span>
+					<span opponent-class></span>
+				</div>
+				<div class="won">
+					VICTORY!
+				</div>
+				<div class="loss">
+					DEFEAT!
+				</div>
+			</div>
+
+			<div game-log>Game:<br /></div>
+			<hr />
 			<div socket-log>Socket: </div>
 			<hr />
 			<div api-log>Ping API: </div>

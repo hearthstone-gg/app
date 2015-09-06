@@ -12,6 +12,6 @@ var server = app.listen(config.port, function() {
 	var host = server.address().address;
 	var port = server.address().port;
 
-	console.log('App sserver listening at http://%s:%s', host, port);
+	console.log('App server listening at http://%s:%s', host, port);
 
 });

@@ -14,7 +14,131 @@ h1 {
 .content {
 	padding: 0 .5em;
 }
-
 [logout], [unlink] {
 	display: none;
+}
+.pull-right {
+	float: right;
+}
+
+
+.class-icons {
+	font-weight: bold;
+	text-align: center;
+}
+.class-icons .vs {
+	display: inline-block;
+	font-size: 2em;
+	position: relative;
+	bottom: .4em;
+}
+.class-icons [player-class], 
+.class-icons [opponent-class] {
+	display: inline-block;
+	width: 3em;
+	height: 3em;
+	margin: 0 1em;
+	background-size: cover;
+}
+
+.class-icons span.medivh,
+.class-icons span.jaina-proudmoore {
+	background-image: url('/images/mage.png');
+}
+.class-icons span.thrall {
+	background-image: url('/images/shaman.png');
+}
+.class-icons span.magni-bronzebeard,
+.class-icons span.garrosh-hellscream {
+	background-image: url('/images/warrior.png');
+}
+
+.class-icons span.valeera-sanguinar {
+	background-image: url('/images/rogue.png');
+}
+.class-icons span.uther-lightbringer {
+	background-image: url('/images/paladin.png');
+}
+.class-icons span.rexxar,
+.class-icons span.alleria-windrunner {
+	background-image: url('/images/hunter.png');
+}
+.class-icons span.malfurion-stormrage {
+	background-image: url('/images/druid.png');
+}
+.class-icons span.gul-dan {
+	background-image: url('/images/warlock.png');
+}
+.class-icons span.anduin-wrynn {
+	background-image: url('/images/priest.png');
+}
+
+.class-icons .game {
+	display: none;
+}
+.class-icons .won,
+.class-icons .loss {
+	display: none;
+	font-size: 2.5em;
+}
+.class-icons.victory .won,
+.class-icons.defeat .loss {
+	display: block;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-name: show;
+}
+.class-icons.started .game {
+	display: block;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-name: show;
+}
+@-webkit-keyframes show {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+/* socket server status */
+[status-icon] {
+	color: #E05050;
+}
+[status-icon].connected {
+	color: #508FE0;
+}
+[status-icon].ping {
+	-webkit-animation-duration: 2s;
+	-webkit-animation-name: blink;
+}
+@-webkit-keyframes blink {
+	50% {
+		color: #16AF0D;
+	}
+	100% {
+		color: #508FE0;
+	}
+}
+
+
+/* game-log status*/
+[game-status-icon] {
+	color: #E05050;
+}
+[game-status-icon].connected {
+	color: #508FE0;
+}
+[game-status-icon].ping {
+	-webkit-animation-duration: 2s;
+	-webkit-animation-name: blink;
+}
+@-webkit-keyframes blink {
+	50% {
+		color: #16AF0D;
+	}
+	100% {
+		color: #508FE0;
+	}
 }
