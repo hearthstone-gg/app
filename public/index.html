@@ -13,6 +13,14 @@
 			<i class="fa-gamepad fa pull-right connected" game-status-icon></i>
 		</h1>
 		<div class="content">
+			<a login href="#">
+			 	<button>Login with Battle.Net</button>
+			</a>
+			<button logout class="pull-right">Logout</button>
+			<button unlink class="pull-right">Unlink</button>
+			
+			<div style="clear-both"></div>
+
 			<div class="class-icons">
 				<div class="game">
 					<span player-class></span>
@@ -27,18 +35,14 @@
 				</div>
 			</div>
 
-			<div game-log>Game:<br /></div>
-			<hr />
-			<div socket-log>Socket: </div>
-			<hr />
-			<div api-log>Ping API: </div>
-			<button ping-api>Ping API</button>
-			<hr />
-			<a login href="#">
-			 	<button>Login with Battle.Net</button>
-			</a>
-			<button logout>Logout</button>
-			<button unlink>Unlink</button>
+			<div class="logs">
+				<div game-log>Game:<br /></div>
+				<hr />
+				<div socket-log>Socket: </div>
+				<hr />
+				<div api-log>Ping API: </div>
+				<button ping-api>Ping API</button>
+			</div>
 		</div>
 
 		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>

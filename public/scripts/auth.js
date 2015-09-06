@@ -31,7 +31,7 @@
 
 	function loadUser(user) {
 		var str = JSON.stringify(user);
-		$login.replaceWith('<strong>Logged In</strong><pre>' + str + '</pre>');
+		$login.replaceWith('<strong>' + user.displayName + '</strong>');
 		$logout.show();
 		$unlink.show();
 	}

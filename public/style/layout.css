@@ -1,3 +1,7 @@
+.logs {
+	display: none;
+}
+
 body {
 	background: #3d3d3d;
 	color: #f3f3f3;
@@ -23,6 +27,7 @@ h1 {
 
 
 .class-icons {
+	margin-top: 1em;
 	font-weight: bold;
 	text-align: center;
 }
