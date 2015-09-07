@@ -119,14 +119,6 @@ h1 {
 	-webkit-animation-duration: 2s;
 	-webkit-animation-name: blink;
 }
-@-webkit-keyframes blink {
-	50% {
-		color: #16AF0D;
-	}
-	100% {
-		color: #508FE0;
-	}
-}
 
 
 /* game-log status*/
@@ -147,4 +139,33 @@ h1 {
 	100% {
 		color: #508FE0;
 	}
+}
+
+@-webkit-keyframes inout {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+
+[submitted] {
+	display: none;
+	text-align: center;
+	font-size: .8em;
+	color: #16AF0D;
+	margin: 1em 0;
+	text-transform: lowercase;
+}
+[submitted].active {
+	display: block;
+	opacity: 0;
+	-webkit-animation-delay: 2s;
+	-webkit-animation-duration: 8s;
+	-webkit-animation-name: inout;
 }
