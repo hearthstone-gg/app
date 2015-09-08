@@ -40,7 +40,7 @@
 				'alleria-windrunner',
 				'rexxar',
 				'malfurion-stormrage',
-				'guldan',
+				'gul-dan',
 				'anduin-wrynn'
 			];
 			var $els = $(selector);
