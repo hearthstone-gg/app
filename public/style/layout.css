@@ -38,45 +38,86 @@ h1 {
 	position: relative;
 	bottom: .4em;
 }
-.class-icons [player-class], 
-.class-icons [opponent-class] {
+.class-icons [player-class],
+.class-icons [player-hero], 
+.class-icons [opponent-class],
+.class-icons [opponent-hero] {
 	display: inline-block;
 	width: 3em;
 	height: 3em;
-	margin: 0 1em;
+	margin: 0 .3em;
 	background-size: cover;
 }
 
-.class-icons span.medivh,
-.class-icons span.jaina-proudmoore {
+.class-icons span.class-icon.medivh,
+.class-icons span.class-icon.jaina-proudmoore {
 	background-image: url('/images/mage.png');
 }
-.class-icons span.thrall {
+.class-icons span.class-icon.thrall {
 	background-image: url('/images/shaman.png');
 }
-.class-icons span.magni-bronzebeard,
-.class-icons span.garrosh-hellscream {
+.class-icons span.class-icon.magni-bronzebeard,
+.class-icons span.class-icon.garrosh-hellscream {
 	background-image: url('/images/warrior.png');
 }
 
-.class-icons span.valeera-sanguinar {
+.class-icons span.class-icon.valeera-sanguinar {
 	background-image: url('/images/rogue.png');
 }
-.class-icons span.uther-lightbringer {
+.class-icons span.class-icon.uther-lightbringer {
 	background-image: url('/images/paladin.png');
 }
-.class-icons span.rexxar,
-.class-icons span.alleria-windrunner {
+.class-icons span.class-icon.rexxar,
+.class-icons span.class-icon.alleria-windrunner {
 	background-image: url('/images/hunter.png');
 }
-.class-icons span.malfurion-stormrage {
+.class-icons span.class-icon.malfurion-stormrage {
 	background-image: url('/images/druid.png');
 }
-.class-icons span.gul-dan {
+.class-icons span.class-icon.gul-dan {
 	background-image: url('/images/warlock.png');
 }
-.class-icons span.anduin-wrynn {
+.class-icons span.class-icon.anduin-wrynn {
 	background-image: url('/images/priest.png');
+}
+
+
+
+.class-icons span.hero-portrait.medivh {
+	background-image: url('/images/heros/medivh.png');
+}
+.class-icons span.hero-portrait.jaina-proudmoore {
+	background-image: url('/images/heros/jaina-proudmoore.png');
+}
+.class-icons span.hero-portrait.thrall {
+	background-image: url('/images/heros/thrall.png');
+}
+.class-icons span.hero-portrait.magni-bronzebeard {
+	background-image: url('/images/heros/magni-bronzebeard.png');
+}
+.class-icons span.hero-portrait.garrosh-hellscream {
+	background-image: url('/images/heros/garrosh-hellscream.png');
+}
+.class-icons span.hero-portrait.valeera-sanguinar {
+	background-image: url('/images/heros/valeera-sanguinar.png');
+}
+.class-icons span.hero-portrait.uther-lightbringer {
+	background-image: url('/images/heros/uther-lightbringer.png');
+}
+.class-icons span.hero-portrait.rexxar {
+	background-image: url('/images/heros/rexxar.png');
+}
+.class-icons span.hero-portrait.alleria-windrunner {
+	background-image: url('/images/heros/alleria-windrunner.png');
+}
+.class-icons span.hero-portrait.malfurion-stormrage {
+	background-image: url('/images/heros/malfurion-stormrage.png');
+}
+.class-icons span.hero-portrait.gul-dan {
+	background-image: url('/images/heros/gul-dan.png');
+}
+.class-icons span.hero-portrait.anduin-wrynn {
+	background-image: url('/images/heros/anduin-wrynn.png');
 }
 
 .class-icons .game {

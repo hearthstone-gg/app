@@ -54,15 +54,19 @@
 			gameEvent();
 			$('[game-log]').append('friendly-hero ' + JSON.stringify(data) + '<br />');
 			removeClasses('[player-class]');
+			removeClasses('[player-hero]');
 			$('[player-class]').addClass(__hsggFormat(data.cardName));
+			$('[player-hero]').addClass(__hsggFormat(data.cardName));
 			$('.class-icons').removeClass('victory').removeClass('defeat');
 			$('.class-icons').addClass('started');
 		});
 		amplify.subscribe('app:opposing-hero', function(data) {
 			gameEvent();
 			$('[game-log]').append('opposing-hero ' + JSON.stringify(data) + '<br />');
+			removeClasses('[opponent-hero]');
 			removeClasses('[opponent-class]');
 			$('[opponent-class]').addClass(__hsggFormat(data.cardName));
+			$('[opponent-hero]').addClass(__hsggFormat(data.cardName));
 			$('.class-icons').removeClass('victory').removeClass('defeat');
 		});
 		amplify.subscribe('app:game-start', function(data) {

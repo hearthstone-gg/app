@@ -29,7 +29,33 @@ publishes
 
 	window.__hsggFormat = function(str) {
 		return str.toLowerCase().replace(' ', '-').replace('\'', '-');
-	}
+	};
+
+	window.__hsggHeroToClass = function(hero) {
+		switch(hero) {
+			case 'medivh':
+			case 'jaina-proudmoore':
+				return 'mage';
+			case 'thrall':
+				return 'shaman';
+			case 'magni-bronzebeard':
+			case 'garrosh-hellscream':
+				return 'warrior';
+			case 'valeera-sanguinar':
+				return 'rogue';
+			case 'uther-lightbringer':
+				return 'paladin';
+			case 'rexxar':
+			case 'alleria-windrunner':
+				return 'hunter';
+			case 'malfurion-stormrage':
+				return 'druid';
+			case 'gul-dan':
+				return 'warlock';
+			case 'anduin-wrynn':
+				return 'priest';
+		}
+	};
 
 	function findWinner(data) {
 		var oppName;
